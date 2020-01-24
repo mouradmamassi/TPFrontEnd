@@ -1,0 +1,42 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="admin-sidenav">
+    <mat-toolbar>
+      <mat-toolbar-row>
+          <span class="title_mediatheque">
+              {{title}}
+          </span>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngFor="let routeAdmin of routesAdmin">
+          <button mat-button routerLink="{{routeAdmin.linkName}}" routerLinkActive="active-link">{{routeAdmin.routeName}}</button>
+      </mat-toolbar-row>
+      <span class="fill-remaining-space"></span>
+      <mat-toolbar-row class="sidebar-deconnexion">
+          <button mat-raised-button color="warn" routerLink="/logout">Se déconnecter</button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="basic">
+      <button mat-button
+        (click)="sidenav.toggle()"
+        fxHide="false" fxHide.gt-sm
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <span class="title_mediatheque">
+            {{title}}
+        </span>
+        <button mat-button *ngFor="let routeAdmin of routesAdmin" routerLink="{{routeAdmin.linkName}}" routerLinkActive="active-link">{{routeAdmin.routeName}}</button>
+      </div>
+      <span class="fill-remaining-space"></span>
+      <div fxLayout="row" fxLayoutAlign="end" fxShow="false" fxShow.gt-sm>
+          <button mat-raised-button color="warn" routerLink="/logout">Se déconnecter</button>
+      </div>
+    </mat-toolbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,43 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .example-events {
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #555;
+
+  }
+  .title_mediatheque{
+    margin-right: 4rem;
+  }
+
+  .active-link{
+    color: #f5f5f5;
+    background: #b0b0b0;
+  }
+  .admin-sidenav{
+    background-color: #f5f5f5;
+  }
+  .sidebar-deconnexion{
+    position: absolute;
+    bottom: 0;
+  }
+  .container {
+    /* On ajoute une marge sur les cotés de l'écran */
+    padding-right: 15px;
+    padding-left: 15px;
+    /* Et on centre */
+    margin-right: auto;
+    margin-left: auto;
+}
+  .fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  
