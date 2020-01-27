@@ -35,6 +35,8 @@
     /* Et on centre */
     margin-right: auto;
     margin-left: auto;
+    /* pour la barre soit fixee */
+    margin-top: 64px;
 }
   .fill-remaining-space {
     /* This fills the remaining space, by using flexbox. 

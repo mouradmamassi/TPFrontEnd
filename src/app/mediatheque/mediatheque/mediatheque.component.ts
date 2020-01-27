@@ -18,7 +18,8 @@ export class MediathequeComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.router.navigate(['/accueil']);
+    if(this.router.url == '/' || this.router.url == ' ') this.router.navigate(['/accueil']);
+    //this.router.navigate(['/accueil']);
   }
 
 }
