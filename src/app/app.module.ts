@@ -30,6 +30,14 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminTableComponent, AdminTableDeleteDialog, AlertTableModificationComponent } from './admin/admin-table/admin-table.component';
 import { AdminDialogComponent } from './admin/admin-dialog/admin-dialog.component';
 import { MatPaginatorIntlCustom } from './admin/admin-table/admin-table-pagination';
+import { GestionAnnoncesComponent } from './admin/gestion-annonces/gestion-annonces.component';
+import { GestionStockComponent } from './admin/gestion-stock/gestion-stock.component';
+import { GestionEmpruntsComponent } from './admin/gestion-emprunts/gestion-emprunts.component';
+import { MediathequeComponent } from './mediatheque/mediatheque/mediatheque.component';
+import { MenuComponent } from './menu/menu.component';
+import { AccueilComponent } from './mediatheque/accueil/accueil.component';
+import { AnnoncesComponent } from './mediatheque/annonces/annonces.component';
+import { EncartsPressesComponent } from './mediatheque/encarts-presses/encarts-presses.component';
 
 
 
@@ -42,6 +50,14 @@ import { MatPaginatorIntlCustom } from './admin/admin-table/admin-table-paginati
     AdminTableDeleteDialog,
     AdminDialogComponent,
     AlertTableModificationComponent,
+    GestionAnnoncesComponent,
+    GestionStockComponent,
+    GestionEmpruntsComponent,
+    MediathequeComponent,
+    MenuComponent,
+    AccueilComponent,
+    AnnoncesComponent,
+    EncartsPressesComponent,
 
   ],
   entryComponents: [

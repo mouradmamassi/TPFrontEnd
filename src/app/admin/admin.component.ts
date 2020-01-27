@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
+import { RoutesApp } from '../app.component';
 
 
-export class RouteAdmin{
-  routeName:string;
-  linkName:string;
 
-  constructor(linkName, routeName){
-    this.linkName = linkName;
-    this.routeName = routeName;
-  }
-}
 
 @Component({
   selector: 'app-admin',
@@ -22,14 +15,12 @@ export class RouteAdmin{
 })
 export class AdminComponent implements OnInit {
 
-  routesAdmin: RouteAdmin[] = [
-    new RouteAdmin("/admin/gestion_utilisateurs", "Gestion des Utilisateurs"),
-    new RouteAdmin("/admin/gestion_annonces", "Gestion des Annonces"),
-    new RouteAdmin("/admin/gestion_emprunts", "Gestion des Emprunts"),
+  routesApp: RoutesApp[] = [
+    new RoutesApp("/admin/gestion_utilisateurs", "Gestion des Utilisateurs"),
+    new RoutesApp("/admin/gestion_annonces", "Gestion des Annonces"),
+    new RoutesApp("/admin/gestion_emprunts", "Gestion des Emprunts"),
   ]
-  showSideNav:boolean = false;
-  title:string = "Médiathèque";
-  opened: boolean;
+  title:string = "Admin Médiathèque";
   constructor(
     router: Router,
   ){
