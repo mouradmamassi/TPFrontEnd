@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 
 
 export class RouteAdmin{

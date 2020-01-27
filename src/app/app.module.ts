@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+    //material angular Module and flex layout
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
@@ -9,23 +12,48 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatPaginatorIntl } from '@angular/material';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GestionUtilisateursComponent } from './admin/gestion-utilisateurs/gestion-utilisateurs.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminTableComponent, AdminTableDeleteDialog, AlertTableModificationComponent } from './admin/admin-table/admin-table.component';
+import { AdminDialogComponent } from './admin/admin-dialog/admin-dialog.component';
+import { MatPaginatorIntlCustom } from './admin/admin-table/admin-table-pagination';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GestionUtilisateursComponent,
-    AdminComponent
+    AdminComponent,
+    AdminTableComponent,
+    AdminTableDeleteDialog,
+    AdminDialogComponent,
+    AlertTableModificationComponent,
+
+  ],
+  entryComponents: [
+    AdminTableDeleteDialog,
+    AlertTableModificationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    //material angular Module and flex layout
     MatToolbarModule,
     MatTabsModule,
     MatMenuModule,
@@ -34,9 +62,19 @@ import { AdminComponent } from './admin/admin.component';
     MatIconModule,
     MatSidenavModule,
     MatCheckboxModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+  
     
   ],
-  providers: [],
+  providers: [
+    { provide: MatPaginatorIntl, useClass: MatPaginatorIntlCustom}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

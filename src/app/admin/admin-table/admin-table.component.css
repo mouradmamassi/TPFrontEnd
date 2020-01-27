@@ -1,0 +1,68 @@
+.table-container {
+    position: relative;
+    max-height: calc(100vh - 200px);
+    overflow: auto;
+}
+.paginator-admin{
+    position: sticky;
+    bottom: 0;
+}
+
+table {
+    width: 100%;
+}
+.table-input input:focus{
+  background-color: rgb(238, 238, 238);
+}
+.table-input input:read-only {
+  background-color: transparent;
+}
+::ng-deep .table-input.mat-form-field-appearance-legacy .mat-form-field-underline{
+  background-color: transparent;
+}
+.delete-button-color{
+  color: #F24C3D;
+}
+  
+.mat-form-field {
+font-size: 14px;
+width: 100%;
+}
+
+td, th {
+width: 25%;
+}
+
+
+/* ce code pour modifier les champs de la table */
+tr.example-detail-row {
+    height: 0;
+}
+  
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #ecf3f9;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-expanded-row td{
+  background-color: #f5f5f5;
+}
+.example-element-row td {
+  border-bottom-width: 0;
+}
+td.element-expand{
+  background-color: #f5f5f5;
+  color: white;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+/* pour les deux boutons annuler et valider lors de modification*/
+.btn-edit-table{
+  margin: 0px 10px;
+}

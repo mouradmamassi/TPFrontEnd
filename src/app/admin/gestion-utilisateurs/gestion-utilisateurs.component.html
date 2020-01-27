@@ -1,1 +1,9 @@
-<p>gestion-utilisateurs works!</p>
+<div fxLayout="row" fxLayoutAlign="space-around center" >
+    <mat-form-field>
+        <mat-label>Rôles d'utilisateurs</mat-label>
+        <mat-select>
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let userRole of userRoles" [value]="userRole.id">{{userRole.nomRole}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
