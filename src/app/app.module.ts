@@ -40,6 +40,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AccueilComponent } from './mediatheque/accueil/accueil.component';
 import { AnnoncesComponent } from './mediatheque/annonces/annonces.component';
 import { EncartsPressesComponent } from './mediatheque/encarts-presses/encarts-presses.component';
+import { MediathequePaginationComponent } from './mediatheque/mediatheque-pagination/mediatheque-pagination.component';
 
 
 
@@ -60,6 +61,7 @@ import { EncartsPressesComponent } from './mediatheque/encarts-presses/encarts-p
     AccueilComponent,
     AnnoncesComponent,
     EncartsPressesComponent,
+    MediathequePaginationComponent,
 
   ],
   entryComponents: [

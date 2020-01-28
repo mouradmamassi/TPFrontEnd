@@ -1,1 +1,42 @@
-<p>encarts-presses works!</p>
+<div fxLayout="row">
+    <div fxFlex fxLayoutAlign="center">
+        <h4>Nos Encarts de la Presses</h4>
+    </div>
+</div>
+<div>
+    <mat-grid-list [cols]="breakpoint" rowHeight="600px" >
+        <mat-grid-tile  *ngFor="let encartPress of pagedList" >
+            <mat-card class="encart-presse-card">
+                <mat-card-header>
+                <img mat-card-avatar
+                src="{{encartPress.logoImg}}"
+                    alt="Photo de presse">
+                <mat-card-title>
+                    {{encartPress.titre}}
+                </mat-card-title>
+                <mat-card-subtitle>il y a une heure</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image
+                src="{{encartPress.imgUrl}}" 
+                alt="image de contenu">
+                <mat-card-content>
+                <p>
+                    {{encartPress.contenu}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-button 
+                    href="{{encartPress.presseUrl}}"
+                    target="_blank">Visiter</a>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<app-mediatheque-pagination 
+[productsList] = "encartsPresses"
+[pagedList]="pagedList"
+(pagedListEvent)="onChangePagedList($event)"
+(breakpointEvent)="onResize($event)"
+[pageSize]="pageSize"
+[breakpoint]="breakpoint"></app-mediatheque-pagination>

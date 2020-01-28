@@ -44,5 +44,8 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit() {
   }
+  onResize(event) { //to adjust to screen size
+    this.breakpoint = (event.target.innerWidth <= 800) ? 1 : 3;
+  }
 
 }

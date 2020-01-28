@@ -38,6 +38,10 @@
     /* pour la barre soit fixee */
     margin-top: 64px;
 }
+.barre-menu{
+  position: fixed;
+  z-index: 9;
+}
   .fill-remaining-space {
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */

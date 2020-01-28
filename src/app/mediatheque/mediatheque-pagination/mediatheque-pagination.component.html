@@ -1,0 +1,8 @@
+<div fxLayout="row" fxLayoutAlign="center">
+    <mat-paginator [length]="length"
+    [hidePageSize]="true"
+    [pageSize]="pageSize"
+    (window:resize)="onResize($event)"
+    (page)="pageEvent = OnPageChange($event)">
+    </mat-paginator>
+</div>

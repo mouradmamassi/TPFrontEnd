@@ -6,51 +6,6 @@
      src="https://www.infoclimat.fr/public-api/mixed/iframeSLIDE?_ll=48.85341,2.3488&_inc=WyJQYXJpcyIsIjQyIiwiMjk4ODUwNyIsIkZSIl0=&_auth=BhxSRVEvUnBUeVZhD3kHLgdvV2ILfVJ1C3cCYQBlA34CaQRlBGRVMwdpB3oAL1VjAy5TMFxnV2cLYFIqCnhUNQZsUj5ROlI1VDtWMw8gBywHKVc2CytSdQtpAmwAbgN%2BAmUEaAR5VTUHbAdnAC5VYAM2UzVcfFdwC2lSMApvVDcGZFI1UTRSMlQ9VjQPIAcsBzFXYgs2Uj8LPgJiAGkDZAIwBDUEMlViB2EHZQAuVWYDN1M3XGJXaAtsUjIKYlQoBnpST1FBUi1Ue1Z2D2oHdQcpV2ILalI%2B&_c=a9ada32b943b42a042e2484a4a5500cd"></iframe>
 </div>
 <hr>
-<div fxLayout="row">
-    <div fxFlex fxLayoutAlign="center">
-        <h4>Nos Annonces</h4>
-    </div>
-</div>
-<div fxLayout="row">
-    <mat-card class="annonce-card" *ngFor="let annonce of annonces">
-        <mat-card-header>
-          <mat-card-title>{{ annonce.titre }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            {{ annonce.contenu }}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          Date de publicaion : {{ annonce.datePublication | date }}
-        </mat-card-actions>
-    </mat-card>
-   
-</div>
+<app-annonces></app-annonces>
 <hr>
-<div fxLayout="row">
-    <mat-card class="encart-presse-card">
-        <mat-card-header>
-          <img mat-card-avatar
-           src="https://www.lemurdelapresse.com/images/murpresse/logo_News/franceinfo.gif"
-            alt="Photo de presse">
-          <mat-card-title>
-            Plomb, pesticides, déchets médicaux : à Guérande, les marais salants sont menacés de toutes parts
-          </mat-card-title>
-          <mat-card-subtitle>il y a une heure</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image
-         src="https://www.francetvinfo.fr/image/75rt4cgpk-a283/500/281/20831157.jpg" 
-         alt="image de contenu">
-        <mat-card-content>
-          <p>
-            Sur notre plateforme #AlertePollution, un représentant associatif a signalé plusieurs atteintes à la biodiversité et à la qualité de l'eau autour des marais salants. Sur place, les différents acteurs tentent d'y faire face.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <a mat-button 
-            href="https://www.francetvinfo.fr/monde/environnement/alerte-pollution/plomb-pesticides-dechets-medicaux-a-guerande-les-marais-salants-sont-menaces-de-toutes-parts_3796837.html#xtor=RSS-3-[lestitres]"
-            target="_blank">Visite</a>
-        </mat-card-actions>
-      </mat-card>
-</div>
+<app-encarts-presses></app-encarts-presses>

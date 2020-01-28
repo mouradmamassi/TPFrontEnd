@@ -3,8 +3,9 @@
         <h4>Nos Annonces</h4>
     </div>
 </div>
-<mat-grid-list [cols]="breakpoint" rowHeight="200px" (window:resize)="onResize($event)" >
-    <mat-grid-tile *ngFor="let annonce of pagedList" >
+<mat-grid-list [cols]="breakpoint" rowHeight="200px" >
+    <mat-grid-tile  *ngFor="let annonce of pagedList" >
+        <!-- ([ngModel])="pagedList" -->
         <mat-card class="annonce-card" >
             <mat-card-header>
             <mat-card-title>{{ annonce.titre }}</mat-card-title>
@@ -20,11 +21,10 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
-
-<div fxLayout="row" fxLayoutAlign="center">
-    <mat-paginator [length]="length"
-    [hidePageSize]="true"
-    [pageSize]="pageSize"
-    (page)="pageEvent = OnPageChange($event)">
-    </mat-paginator>
-</div>
+<app-mediatheque-pagination 
+[productsList] = "annonces"
+[pagedList]="pagedList"
+(pagedListEvent)="onChangePagedList($event)"
+(breakpointEvent)="onResize($event)"
+[pageSize]="pageSize"
+></app-mediatheque-pagination>
