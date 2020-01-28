@@ -7,6 +7,7 @@ import { MediathequeComponent } from './mediatheque/mediatheque/mediatheque.comp
 import { AnnoncesComponent } from './mediatheque/annonces/annonces.component';
 import { AccueilComponent } from './mediatheque/accueil/accueil.component';
 import { EncartsPressesComponent } from './mediatheque/encarts-presses/encarts-presses.component';
+import { ConnexionComponent } from './mediatheque/connexion/connexion.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'accueil', component: AccueilComponent },
       { path: 'annonces', component: AnnoncesComponent },
       { path: 'encarts_presses', component: EncartsPressesComponent },
+      { path: 'connexion', component: ConnexionComponent },
     ]
   },
   {

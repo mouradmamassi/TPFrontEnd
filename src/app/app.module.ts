@@ -41,6 +41,8 @@ import { AccueilComponent } from './mediatheque/accueil/accueil.component';
 import { AnnoncesComponent } from './mediatheque/annonces/annonces.component';
 import { EncartsPressesComponent } from './mediatheque/encarts-presses/encarts-presses.component';
 import { MediathequePaginationComponent } from './mediatheque/mediatheque-pagination/mediatheque-pagination.component';
+import { UserComponent } from './user/user/user.component';
+import { ConnexionComponent } from './mediatheque/connexion/connexion.component';
 
 
 
@@ -62,6 +64,8 @@ import { MediathequePaginationComponent } from './mediatheque/mediatheque-pagina
     AnnoncesComponent,
     EncartsPressesComponent,
     MediathequePaginationComponent,
+    UserComponent,
+    ConnexionComponent,
 
   ],
   entryComponents: [
