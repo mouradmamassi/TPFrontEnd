@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     //material angular Module and flex layout
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -77,6 +77,7 @@ import { ConnexionComponent } from './mediatheque/connexion/connexion.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     //material angular Module and flex layout
     MatToolbarModule,
     MatTabsModule,
@@ -95,6 +96,7 @@ import { ConnexionComponent } from './mediatheque/connexion/connexion.component'
     MatSnackBarModule,
     MatCardModule,
     MatGridListModule,
+
   
     
   ],

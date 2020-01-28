@@ -40,6 +40,7 @@ export class AccueilComponent implements OnInit {
       new Date()
     ),
   ]
+  breakpoint;
   constructor() { }
 
   ngOnInit() {

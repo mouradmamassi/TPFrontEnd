@@ -1,0 +1,15 @@
+::ng-deep .connexion-card .mat-card-header-text, .connexion-form-field{
+    width: 100%;
+}
+.connexion-icon{
+    margin-bottom: 5px;
+}
+.connexion-card{
+    margin-top: 20px;
+    max-width: 400px;
+}
+.connexion-titre{
+    text-align: center;
+    font-size: 30px !important;
+    margin-bottom: 30px !important;
+}
