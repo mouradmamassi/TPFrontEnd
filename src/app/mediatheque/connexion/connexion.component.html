@@ -1,5 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center">
-<form>
+<!-- formulaire de connexion -->
+<form [@openClose]="isOpenConnexion ? 'open' : 'closed'" [formGroup]="connexionForm">
     <mat-card class="connexion-card">
         <div fxLayout="row" fxLayoutAlign="center" class="connexion-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
@@ -11,31 +12,84 @@
             <div fxLayout="row" fxLayoutAlign="center">
                 <mat-form-field appearance="fill" class="connexion-form-field">
                     <mat-label>Adresse e-mail</mat-label>
-                    <input matInput ([ngModel])="email" [formControl]="emailFormControl" required>
+                    <input matInput ([ngModel])="emailConnexion" [formControl]="emailConnexion" required>
                     <mat-icon matSuffix>email</mat-icon>
-                    <mat-error *ngIf="emailFormControl.invalid  && (emailFormControl.dirty || emailFormControl.touched)">{{getErrorMessage()}}</mat-error>
+                    <mat-error *ngIf="emailConnexion.invalid  && (emailConnexion.dirty || emailConnexion.touched)">{{getErrorMessageConnexion()}}</mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center">
                 <mat-form-field appearance="fill" class="connexion-form-field">
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput ([ngModel])="password" type="password" [formControl]="passwordFormControl" required>
+                    <input matInput ([ngModel])="passwordConnexion" type="password" [formControl]="passwordConnexion" required>
                     <mat-icon matSuffix>lock</mat-icon>
-                    <mat-error *ngIf="passwordFormControl.invalid  && (passwordFormControl.dirty || passwordFormControl.touched)">{{getErrorMessage()}}</mat-error>
+                    <mat-error *ngIf="passwordConnexion.invalid  && (passwordConnexion.dirty || passwordConnexion.touched)">{{getErrorMessageConnexion()}}</mat-error>
         
                 </mat-form-field>
             </div>
         </mat-card-content>
         <mat-card-actions>
             <div fxLayout="row" fxLayoutAlign="center">
-                <button mat-raised-button color="primary">Se connecter</button>
+                <button mat-raised-button color="primary"
+                type="submit" [disabled]="!connexionForm.valid">Se connecter</button>
             </div>
             <div fxLayout="row" fxLayoutAlign="center">
-                <a mat-button>Vous n'avez pas un compte ? Cliquez ici</a>
+                <a mat-button (click)="toggleConnexionInscription()">Vous n'avez pas un compte ? Cliquez ici</a>
                 
             </div>
         </mat-card-actions>
     </mat-card>
     
 </form>
-</div>
+<!-- formulaire d'inscription -->
+<form [@openClose]="isOpenInscription ? 'open' : 'closed'" [formGroup]="inscriptionForm">
+    <mat-card class="connexion-card">
+        <div fxLayout="row" fxLayoutAlign="center" class="connexion-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+        </div>
+        <mat-card-header>
+            <mat-card-title class="connexion-titre">Inscription</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <mat-form-field appearance="fill" class="connexion-form-field">
+                    <mat-label>Adresse e-mail</mat-label>
+                    <input matInput ([ngModel])="emailInscription"  formControlName="emailInscription" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="emailInscription.invalid  && (emailInscription.dirty || emailInscription.touched)">{{getErrorMessageInscription()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <mat-form-field appearance="fill" class="connexion-form-field">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput ([ngModel])="passwordInscription" type="password" formControlName="passwordInscription" required>
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <mat-error *ngIf="passwordInscription.invalid  && (passwordInscription.dirty || passwordInscription.touched)">{{getErrorMessageInscription()}}</mat-error>
+        
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <mat-form-field appearance="fill" class="connexion-form-field">
+                    <mat-label>Confirmez votre mot de passe</mat-label>
+                    <input matInput ([ngModel])="passwordConfirmationInscription" type="password" formControlName="passwordConfirmationInscription" required>
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <mat-error *ngIf="passwordConfirmationInscription.invalid  && (passwordConfirmationInscription.dirty || passwordConfirmationInscription.touched)">{{getErrorMessageInscription()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <mat-error *ngIf="inscriptionForm.hasError('mismatch')">
+                    Le mot de passe confimé n'est pas identique au mot de passe entré
+                </mat-error>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <button mat-raised-button color="primary" 
+                type="submit" [disabled]="!inscriptionForm.valid">S'inscrire</button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <a mat-button (click)="toggleConnexionInscription()">Vous avez un compte ? Cliquez ici</a>
+                
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</form>
