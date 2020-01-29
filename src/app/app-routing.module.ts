@@ -8,6 +8,9 @@ import { AnnoncesComponent } from './mediatheque/annonces/annonces.component';
 import { AccueilComponent } from './mediatheque/accueil/accueil.component';
 import { EncartsPressesComponent } from './mediatheque/encarts-presses/encarts-presses.component';
 import { ConnexionComponent } from './mediatheque/connexion/connexion.component';
+import { UserComponent } from './user/user/user.component';
+import { UserEmpruntsComponent } from './user/user-emprunts/user-emprunts.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -27,10 +30,14 @@ const routes: Routes = [
         },
     ]
   },
- 
 
-  //A supprimer
-  
+  {
+    path: 'user', component: UserComponent, children: [
+      { path: 'emprunts', component: UserEmpruntsComponent },
+      { path: 'profile', component: UserProfileComponent },
+    ]
+  },
+ 
 ];
 
 @NgModule({

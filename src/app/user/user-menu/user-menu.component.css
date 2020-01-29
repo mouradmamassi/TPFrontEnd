@@ -1,0 +1,50 @@
+.side-nav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+
+}
+.active-link{
+  color: #f5f5f5;
+  background: #b0b0b0;
+}
+.user-sidenav{
+  background-color: #f5f5f5;
+}
+.sidebar-deconnexion{
+  position: absolute;
+  bottom: 0;
+}
+
+.barre-menu{
+  position: fixed;
+  z-index: 9;
+}
+.container{
+  /* On ajoute une marge sur les cotés de l'écran */
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  /* Et on centre */
+  margin-right: auto;
+  margin-left: auto;
+  /* pour la barre soit fixee */
+  margin-top: 64px;
+}
+.fill-remaining-space {
+/* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.avatar-user{
+  margin: 20px 0px;
+}
